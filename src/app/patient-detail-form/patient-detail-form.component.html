@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>{{ isEditMode ? 'Edit' : 'Add' }} Patient Detail</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="patientId">Patient ID</label>
+        <input type="number" class="form-control" id="patientId" [(ngModel)]="patientDetail.PatientID" name="patientId" required>
+      </div>
+      <div class="form-group">
+        <label for="diagnosis">Diagnosis</label>
+        <input type="text" class="form-control" id="diagnosis" [(ngModel)]="patientDetail.Diagnosis" name="diagnosis" required>
+      </div>
+      <div class="form-group">
+        <label for="treatmentHistory">Treatment History</label>
+        <textarea class="form-control" id="treatmentHistory" [(ngModel)]="patientDetail.TreatmentHistory" name="treatmentHistory"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="medications">Medications</label>
+        <input type="text" class="form-control" id="medications" [(ngModel)]="patientDetail.Medications" name="medications">
+      </div>
+      <div class="form-group">
+        <label for="allergies">Allergies</label>
+        <input type="text" class="form-control" id="allergies" [(ngModel)]="patientDetail.Allergies" name="allergies">
+      </div>
+      <div class="form-group">
+        <label for="notes">Notes</label>
+        <textarea class="form-control" id="notes" [(ngModel)]="patientDetail.Notes" name="notes"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Update' : 'Add' }} Patient Detail</button>
+    </form>
+  </div>
